@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8a5951aa156840ccac5f6e594d30b4eb" Name="Diagram1">
+        <EntityTypeShape EntityType="TheAgoraDBModel.Announcement" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheAgoraDBModel.AnnouncementComment" Width="1.5" PointX="5.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheAgoraDBModel.Bookmark" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheAgoraDBModel.Comment" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheAgoraDBModel.ForumComment" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheAgoraDBModel.ForumPost" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheAgoraDBModel.MarketListing" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheAgoraDBModel.sysdiagram" Width="1.5" PointX="7.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheAgoraDBModel.User" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <AssociationConnector Association="TheAgoraDBModel.FK__Announcem__Annou__6EF57B66" ManuallyRouted="false" />
+        <AssociationConnector Association="TheAgoraDBModel.FK__Announcem__UserI__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="TheAgoraDBModel.FK__Bookmark__Announ__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="TheAgoraDBModel.FK__Announcem__Comme__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="TheAgoraDBModel.FK__Announcem__UserI__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="TheAgoraDBModel.FK__Bookmark__UserID__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="TheAgoraDBModel.FK__ForumComm__Comme__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="TheAgoraDBModel.FK__ForumComm__PostI__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="TheAgoraDBModel.FK__ForumComm__UserI__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="TheAgoraDBModel.FK__ForumPost__UserI__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="TheAgoraDBModel.FK__MarketLis__UserI__5EBF139D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

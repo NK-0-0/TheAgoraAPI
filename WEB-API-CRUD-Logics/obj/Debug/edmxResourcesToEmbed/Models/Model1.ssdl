@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TheAgoraDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Announcement">
+    <Key>
+      <PropertyRef Name="AnnouncementID" />
+    </Key>
+    <Property Name="AnnouncementID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="AnnouncementType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Date_and_time_of_creation" Type="datetime" />
+    <Property Name="Campus" Type="nvarchar" MaxLength="100" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="Tags" Type="nvarchar(max)" />
+    <Property Name="Categories" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AnnouncementComment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="int" Nullable="false" />
+    <Property Name="AnnouncementID" Type="int" />
+    <Property Name="UserID" Type="int" />
+  </EntityType>
+  <EntityType Name="Bookmark">
+    <Key>
+      <PropertyRef Name="BookmarkID" />
+    </Key>
+    <Property Name="BookmarkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="AnnouncementID" Type="int" />
+    <Property Name="Date_and_time_of_creation" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CommentType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Content" Type="nvarchar(max)" />
+    <Property Name="Date_and_time_of_creation" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ForumComment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="int" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="PostID" Type="int" />
+  </EntityType>
+  <EntityType Name="ForumPost">
+    <Key>
+      <PropertyRef Name="PostID" />
+    </Key>
+    <Property Name="PostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Content" Type="nvarchar(max)" />
+    <Property Name="Date_and_time_of_creation" Type="datetime" />
+    <Property Name="Number_of_likes" Type="int" />
+    <Property Name="isApproved" Type="bit" />
+    <Property Name="Image" Type="nvarchar(max)" />
+    <Property Name="Tags" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="MarketListing">
+    <Key>
+      <PropertyRef Name="ListingID" />
+    </Key>
+    <Property Name="ListingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" />
+    <Property Name="Descriptions" Type="nvarchar(max)" />
+    <Property Name="Images" Type="nvarchar(max)" />
+    <Property Name="Price" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
+    <Property Name="isStaffMember" Type="bit" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <Association Name="FK__Announcem__Annou__6EF57B66">
+    <End Role="Announcement" Type="Self.Announcement" Multiplicity="0..1" />
+    <End Role="AnnouncementComment" Type="Self.AnnouncementComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Announcement">
+        <PropertyRef Name="AnnouncementID" />
+      </Principal>
+      <Dependent Role="AnnouncementComment">
+        <PropertyRef Name="AnnouncementID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Announcem__Comme__6E01572D">
+    <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+    <End Role="AnnouncementComment" Type="Self.AnnouncementComment" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Comment">
+        <PropertyRef Name="CommentID" />
+      </Principal>
+      <Dependent Role="AnnouncementComment">
+        <PropertyRef Name="CommentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Announcem__UserI__6B24EA82">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Announcement" Type="Self.Announcement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Announcement">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Announcem__UserI__6FE99F9F">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="AnnouncementComment" Type="Self.AnnouncementComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="AnnouncementComment">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bookmark__Announ__73BA3083">
+    <End Role="Announcement" Type="Self.Announcement" Multiplicity="0..1" />
+    <End Role="Bookmark" Type="Self.Bookmark" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Announcement">
+        <PropertyRef Name="AnnouncementID" />
+      </Principal>
+      <Dependent Role="Bookmark">
+        <PropertyRef Name="AnnouncementID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bookmark__UserID__72C60C4A">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Bookmark" Type="Self.Bookmark" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Bookmark">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ForumComm__Comme__66603565">
+    <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+    <End Role="ForumComment" Type="Self.ForumComment" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Comment">
+        <PropertyRef Name="CommentID" />
+      </Principal>
+      <Dependent Role="ForumComment">
+        <PropertyRef Name="CommentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ForumComm__PostI__68487DD7">
+    <End Role="ForumPost" Type="Self.ForumPost" Multiplicity="0..1" />
+    <End Role="ForumComment" Type="Self.ForumComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ForumPost">
+        <PropertyRef Name="PostID" />
+      </Principal>
+      <Dependent Role="ForumComment">
+        <PropertyRef Name="PostID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ForumComm__UserI__6754599E">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="ForumComment" Type="Self.ForumComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ForumComment">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ForumPost__UserI__619B8048">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="ForumPost" Type="Self.ForumPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ForumPost">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MarketLis__UserI__5EBF139D">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="MarketListing" Type="Self.MarketListing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="MarketListing">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TheAgoraDBModelStoreContainer">
+    <EntitySet Name="Announcement" EntityType="Self.Announcement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnnouncementComment" EntityType="Self.AnnouncementComment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bookmark" EntityType="Self.Bookmark" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ForumComment" EntityType="Self.ForumComment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ForumPost" EntityType="Self.ForumPost" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MarketListing" EntityType="Self.MarketListing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Announcem__Annou__6EF57B66" Association="Self.FK__Announcem__Annou__6EF57B66">
+      <End Role="Announcement" EntitySet="Announcement" />
+      <End Role="AnnouncementComment" EntitySet="AnnouncementComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Announcem__Comme__6E01572D" Association="Self.FK__Announcem__Comme__6E01572D">
+      <End Role="Comment" EntitySet="Comment" />
+      <End Role="AnnouncementComment" EntitySet="AnnouncementComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Announcem__UserI__6B24EA82" Association="Self.FK__Announcem__UserI__6B24EA82">
+      <End Role="User" EntitySet="User" />
+      <End Role="Announcement" EntitySet="Announcement" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Announcem__UserI__6FE99F9F" Association="Self.FK__Announcem__UserI__6FE99F9F">
+      <End Role="User" EntitySet="User" />
+      <End Role="AnnouncementComment" EntitySet="AnnouncementComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bookmark__Announ__73BA3083" Association="Self.FK__Bookmark__Announ__73BA3083">
+      <End Role="Announcement" EntitySet="Announcement" />
+      <End Role="Bookmark" EntitySet="Bookmark" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bookmark__UserID__72C60C4A" Association="Self.FK__Bookmark__UserID__72C60C4A">
+      <End Role="User" EntitySet="User" />
+      <End Role="Bookmark" EntitySet="Bookmark" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ForumComm__Comme__66603565" Association="Self.FK__ForumComm__Comme__66603565">
+      <End Role="Comment" EntitySet="Comment" />
+      <End Role="ForumComment" EntitySet="ForumComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ForumComm__PostI__68487DD7" Association="Self.FK__ForumComm__PostI__68487DD7">
+      <End Role="ForumPost" EntitySet="ForumPost" />
+      <End Role="ForumComment" EntitySet="ForumComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ForumComm__UserI__6754599E" Association="Self.FK__ForumComm__UserI__6754599E">
+      <End Role="User" EntitySet="User" />
+      <End Role="ForumComment" EntitySet="ForumComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ForumPost__UserI__619B8048" Association="Self.FK__ForumPost__UserI__619B8048">
+      <End Role="User" EntitySet="User" />
+      <End Role="ForumPost" EntitySet="ForumPost" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MarketLis__UserI__5EBF139D" Association="Self.FK__MarketLis__UserI__5EBF139D">
+      <End Role="User" EntitySet="User" />
+      <End Role="MarketListing" EntitySet="MarketListing" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

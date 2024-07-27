@@ -1,0 +1,189 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|c:\\users\\nkate\\desktop\\web-api-crud-logics\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|c:\\users\\nkate\\desktop\\web-api-crud-logics\\models\\forumcomment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|solutionrelative:models\\forumcomment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|c:\\users\\nkate\\desktop\\web-api-crud-logics\\models\\announcementcomment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|solutionrelative:models\\announcementcomment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|c:\\users\\nkate\\desktop\\web-api-crud-logics\\models\\model1.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|solutionrelative:models\\model1.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|c:\\users\\nkate\\desktop\\web-api-crud-logics\\models\\forumpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|solutionrelative:models\\forumpost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|c:\\users\\nkate\\desktop\\web-api-crud-logics\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|solutionrelative:models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|c:\\users\\nkate\\desktop\\web-api-crud-logics\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|c:\\users\\nkate\\desktop\\web-api-crud-logics\\models\\marketlisting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|solutionrelative:models\\marketlisting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|c:\\users\\nkate\\desktop\\web-api-crud-logics\\models\\model1.context.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|solutionrelative:models\\model1.context.tt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|c:\\users\\nkate\\desktop\\web-api-crud-logics\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{16B6883C-B277-4275-98E6-C73A743B8A69}|WEB-API-CRUD-Logics.csproj|solutionrelative:web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Controllers\\UsersController.cs*",
+              "RelativeToolTip": "Controllers\\UsersController.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T13:40:49.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Model1.Context.tt",
+              "DocumentMoniker": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Models\\Model1.Context.tt",
+              "RelativeDocumentMoniker": "Models\\Model1.Context.tt",
+              "ToolTip": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Models\\Model1.Context.tt",
+              "RelativeToolTip": "Models\\Model1.Context.tt",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-07-27T13:15:25.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ForumComment.cs",
+              "DocumentMoniker": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Models\\ForumComment.cs",
+              "RelativeDocumentMoniker": "Models\\ForumComment.cs",
+              "ToolTip": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Models\\ForumComment.cs",
+              "RelativeToolTip": "Models\\ForumComment.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACQAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T12:49:11.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABwAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T12:23:07.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Model1.Context.cs",
+              "DocumentMoniker": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Models\\Model1.Context.cs",
+              "RelativeDocumentMoniker": "Models\\Model1.Context.cs",
+              "ToolTip": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Models\\Model1.Context.cs",
+              "RelativeToolTip": "Models\\Model1.Context.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAzwF4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T12:30:01.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MarketListing.cs",
+              "DocumentMoniker": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Models\\MarketListing.cs",
+              "RelativeDocumentMoniker": "Models\\MarketListing.cs",
+              "ToolTip": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Models\\MarketListing.cs",
+              "RelativeToolTip": "Models\\MarketListing.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAywBoAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T12:23:34.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AnnouncementComment.cs",
+              "DocumentMoniker": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Models\\AnnouncementComment.cs",
+              "RelativeDocumentMoniker": "Models\\AnnouncementComment.cs",
+              "ToolTip": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Models\\AnnouncementComment.cs",
+              "RelativeToolTip": "Models\\AnnouncementComment.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACcAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T12:23:41.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ForumPost.cs",
+              "DocumentMoniker": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Models\\ForumPost.cs",
+              "RelativeDocumentMoniker": "Models\\ForumPost.cs",
+              "ToolTip": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Models\\ForumPost.cs",
+              "RelativeToolTip": "Models\\ForumPost.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADUAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T12:48:37.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Models\\Model1.edmx",
+              "RelativeDocumentMoniker": "Models\\Model1.edmx",
+              "ToolTip": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Models\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "Models\\Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2024-07-27T12:13:45.488Z",
+              "EditorCaption": " [Diagram1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Web.config",
+              "RelativeDocumentMoniker": "Web.config",
+              "ToolTip": "C:\\Users\\nkate\\Desktop\\WEB-API-CRUD-Logics\\Web.config",
+              "RelativeToolTip": "Web.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEEAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-07-27T12:11:59.618Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
