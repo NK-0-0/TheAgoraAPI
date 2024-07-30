@@ -19,6 +19,7 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_DbContextTypeFullName>WEB_API_CRUD_Logics.Data.WEB_API_CRUD_LogicsContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
+    <NameOfLastUsedPublishProfile>D:\C.S\3rd Year\Semester 1\WRRV301\TheAgoraAPI\WEB-API-CRUD-Logics\Properties\PublishProfiles\WEB-API-CRUD-Logics20240730111447 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

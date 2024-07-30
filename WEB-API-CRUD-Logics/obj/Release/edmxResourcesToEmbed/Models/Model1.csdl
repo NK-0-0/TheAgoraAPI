@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TheAgoraDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Announcement">
+    <Key>
+      <PropertyRef Name="AnnouncementID" />
+    </Key>
+    <Property Name="AnnouncementID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AnnouncementType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date_and_time_of_creation" Type="DateTime" Precision="3" />
+    <Property Name="Campus" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tags" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Categories" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AnnouncementComments" Relationship="Self.FK__Announcem__Annou__6EF57B66" FromRole="Announcement" ToRole="AnnouncementComment" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Announcem__UserI__6B24EA82" FromRole="Announcement" ToRole="User" />
+    <NavigationProperty Name="Bookmarks" Relationship="Self.FK__Bookmark__Announ__73BA3083" FromRole="Announcement" ToRole="Bookmark" />
+  </EntityType>
+  <EntityType Name="AnnouncementComment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="Int32" Nullable="false" />
+    <Property Name="AnnouncementID" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <NavigationProperty Name="Announcement" Relationship="Self.FK__Announcem__Annou__6EF57B66" FromRole="AnnouncementComment" ToRole="Announcement" />
+    <NavigationProperty Name="Comment" Relationship="Self.FK__Announcem__Comme__6E01572D" FromRole="AnnouncementComment" ToRole="Comment" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Announcem__UserI__6FE99F9F" FromRole="AnnouncementComment" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Bookmark">
+    <Key>
+      <PropertyRef Name="BookmarkID" />
+    </Key>
+    <Property Name="BookmarkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="AnnouncementID" Type="Int32" />
+    <Property Name="Date_and_time_of_creation" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Announcement" Relationship="Self.FK__Bookmark__Announ__73BA3083" FromRole="Bookmark" ToRole="Announcement" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Bookmark__UserID__72C60C4A" FromRole="Bookmark" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CommentType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date_and_time_of_creation" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="AnnouncementComment" Relationship="Self.FK__Announcem__Comme__6E01572D" FromRole="Comment" ToRole="AnnouncementComment" />
+    <NavigationProperty Name="ForumComment" Relationship="Self.FK__ForumComm__Comme__66603565" FromRole="Comment" ToRole="ForumComment" />
+  </EntityType>
+  <EntityType Name="ForumComment">
+    <Key>
+      <PropertyRef Name="CommentID" />
+    </Key>
+    <Property Name="CommentID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="PostID" Type="Int32" />
+    <NavigationProperty Name="Comment" Relationship="Self.FK__ForumComm__Comme__66603565" FromRole="ForumComment" ToRole="Comment" />
+    <NavigationProperty Name="ForumPost" Relationship="Self.FK__ForumComm__PostI__68487DD7" FromRole="ForumComment" ToRole="ForumPost" />
+    <NavigationProperty Name="User" Relationship="Self.FK__ForumComm__UserI__6754599E" FromRole="ForumComment" ToRole="User" />
+  </EntityType>
+  <EntityType Name="ForumPost">
+    <Key>
+      <PropertyRef Name="PostID" />
+    </Key>
+    <Property Name="PostID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Date_and_time_of_creation" Type="DateTime" Precision="3" />
+    <Property Name="Number_of_likes" Type="Int32" />
+    <Property Name="isApproved" Type="Boolean" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tags" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ForumComments" Relationship="Self.FK__ForumComm__PostI__68487DD7" FromRole="ForumPost" ToRole="ForumComment" />
+    <NavigationProperty Name="User" Relationship="Self.FK__ForumPost__UserI__619B8048" FromRole="ForumPost" ToRole="User" />
+  </EntityType>
+  <EntityType Name="MarketListing">
+    <Key>
+      <PropertyRef Name="ListingID" />
+    </Key>
+    <Property Name="ListingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Descriptions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Images" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Precision="10" Scale="2" />
+    <NavigationProperty Name="User" Relationship="Self.FK__MarketLis__UserI__5EBF139D" FromRole="MarketListing" ToRole="User" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="isStaffMember" Type="Boolean" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Announcements" Relationship="Self.FK__Announcem__UserI__6B24EA82" FromRole="User" ToRole="Announcement" />
+    <NavigationProperty Name="AnnouncementComments" Relationship="Self.FK__Announcem__UserI__6FE99F9F" FromRole="User" ToRole="AnnouncementComment" />
+    <NavigationProperty Name="Bookmarks" Relationship="Self.FK__Bookmark__UserID__72C60C4A" FromRole="User" ToRole="Bookmark" />
+    <NavigationProperty Name="ForumComments" Relationship="Self.FK__ForumComm__UserI__6754599E" FromRole="User" ToRole="ForumComment" />
+    <NavigationProperty Name="ForumPosts" Relationship="Self.FK__ForumPost__UserI__619B8048" FromRole="User" ToRole="ForumPost" />
+    <NavigationProperty Name="MarketListings" Relationship="Self.FK__MarketLis__UserI__5EBF139D" FromRole="User" ToRole="MarketListing" />
+  </EntityType>
+  <Association Name="FK__Announcem__Annou__6EF57B66">
+    <End Role="Announcement" Type="Self.Announcement" Multiplicity="0..1" />
+    <End Role="AnnouncementComment" Type="Self.AnnouncementComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Announcement">
+        <PropertyRef Name="AnnouncementID" />
+      </Principal>
+      <Dependent Role="AnnouncementComment">
+        <PropertyRef Name="AnnouncementID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Announcem__UserI__6B24EA82">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Announcement" Type="Self.Announcement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Announcement">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bookmark__Announ__73BA3083">
+    <End Role="Announcement" Type="Self.Announcement" Multiplicity="0..1" />
+    <End Role="Bookmark" Type="Self.Bookmark" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Announcement">
+        <PropertyRef Name="AnnouncementID" />
+      </Principal>
+      <Dependent Role="Bookmark">
+        <PropertyRef Name="AnnouncementID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Announcem__Comme__6E01572D">
+    <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+    <End Role="AnnouncementComment" Type="Self.AnnouncementComment" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Comment">
+        <PropertyRef Name="CommentID" />
+      </Principal>
+      <Dependent Role="AnnouncementComment">
+        <PropertyRef Name="CommentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Announcem__UserI__6FE99F9F">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="AnnouncementComment" Type="Self.AnnouncementComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="AnnouncementComment">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Bookmark__UserID__72C60C4A">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Bookmark" Type="Self.Bookmark" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Bookmark">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ForumComm__Comme__66603565">
+    <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+    <End Role="ForumComment" Type="Self.ForumComment" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Comment">
+        <PropertyRef Name="CommentID" />
+      </Principal>
+      <Dependent Role="ForumComment">
+        <PropertyRef Name="CommentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ForumComm__PostI__68487DD7">
+    <End Role="ForumPost" Type="Self.ForumPost" Multiplicity="0..1" />
+    <End Role="ForumComment" Type="Self.ForumComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ForumPost">
+        <PropertyRef Name="PostID" />
+      </Principal>
+      <Dependent Role="ForumComment">
+        <PropertyRef Name="PostID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ForumComm__UserI__6754599E">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="ForumComment" Type="Self.ForumComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ForumComment">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ForumPost__UserI__619B8048">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="ForumPost" Type="Self.ForumPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ForumPost">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MarketLis__UserI__5EBF139D">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="MarketListing" Type="Self.MarketListing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="MarketListing">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TheAgoraDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Announcements" EntityType="Self.Announcement" />
+    <EntitySet Name="AnnouncementComments" EntityType="Self.AnnouncementComment" />
+    <EntitySet Name="Bookmarks" EntityType="Self.Bookmark" />
+    <EntitySet Name="Comments" EntityType="Self.Comment" />
+    <EntitySet Name="ForumComments" EntityType="Self.ForumComment" />
+    <EntitySet Name="ForumPosts" EntityType="Self.ForumPost" />
+    <EntitySet Name="MarketListings" EntityType="Self.MarketListing" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__Announcem__Annou__6EF57B66" Association="Self.FK__Announcem__Annou__6EF57B66">
+      <End Role="Announcement" EntitySet="Announcements" />
+      <End Role="AnnouncementComment" EntitySet="AnnouncementComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Announcem__UserI__6B24EA82" Association="Self.FK__Announcem__UserI__6B24EA82">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Announcement" EntitySet="Announcements" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bookmark__Announ__73BA3083" Association="Self.FK__Bookmark__Announ__73BA3083">
+      <End Role="Announcement" EntitySet="Announcements" />
+      <End Role="Bookmark" EntitySet="Bookmarks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Announcem__Comme__6E01572D" Association="Self.FK__Announcem__Comme__6E01572D">
+      <End Role="Comment" EntitySet="Comments" />
+      <End Role="AnnouncementComment" EntitySet="AnnouncementComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Announcem__UserI__6FE99F9F" Association="Self.FK__Announcem__UserI__6FE99F9F">
+      <End Role="User" EntitySet="Users" />
+      <End Role="AnnouncementComment" EntitySet="AnnouncementComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Bookmark__UserID__72C60C4A" Association="Self.FK__Bookmark__UserID__72C60C4A">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Bookmark" EntitySet="Bookmarks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ForumComm__Comme__66603565" Association="Self.FK__ForumComm__Comme__66603565">
+      <End Role="Comment" EntitySet="Comments" />
+      <End Role="ForumComment" EntitySet="ForumComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ForumComm__PostI__68487DD7" Association="Self.FK__ForumComm__PostI__68487DD7">
+      <End Role="ForumPost" EntitySet="ForumPosts" />
+      <End Role="ForumComment" EntitySet="ForumComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ForumComm__UserI__6754599E" Association="Self.FK__ForumComm__UserI__6754599E">
+      <End Role="User" EntitySet="Users" />
+      <End Role="ForumComment" EntitySet="ForumComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ForumPost__UserI__619B8048" Association="Self.FK__ForumPost__UserI__619B8048">
+      <End Role="User" EntitySet="Users" />
+      <End Role="ForumPost" EntitySet="ForumPosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MarketLis__UserI__5EBF139D" Association="Self.FK__MarketLis__UserI__5EBF139D">
+      <End Role="User" EntitySet="Users" />
+      <End Role="MarketListing" EntitySet="MarketListings" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
